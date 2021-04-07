@@ -1,274 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Wireframe</title>
-  <link rel="stylesheet" href="src/styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="src/index.js"></script>
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
-</head>
-
-<body>
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Martel:wght@300&display=swap");
-
-* {
-  font-family: "Martel", serif;
-}
-
-h1 {
-  text-align: center;
-}
-
-.yayyy {
-  color: rgba(240, 128, 128, 0.7);
-}
-
-mark {
-  background-color: rgba(240, 128, 128, 0.4);
-  border-radius: 4px;
-  padding: 1px;
-}
-
-li {
-  margin-bottom: 6px;
-}
-
-i {
-  font-size: 50px;
-  transition: 1s;
-  color: rgba(240, 128, 128, 0.3);
-}
-
-i:hover {
-  color: rgba(240, 128, 128, 0.5);
-}
-
-.btn-light {
-  background-color: rgba(240, 128, 128, 0.5);
-}
-
-.btn-light:hover {
-  background-color: rgba(240, 128, 128, 0.3);
-}
-
-.predictions {
-  list-style: none;
-  padding: 0;
-}
-
-.square {
-  border: 1px solid lightgray;
-  border-radius: 20px;
-  padding: 10px;
-}
-
-.coded {
-  color: gray;
-}
-
-.btn-light1 {
-  padding-top: 1px;
-  padding-bottom: 1px;
-  margin-bottom: 5px;
-}
-
-@media only screen and (max-width: 600px) {
-  .button-f {
-    text-align: center;
-  }
-}
-  </style>
-  <div class="container">
-    <div class="square">
-      <div class="row">
-        <div class="col-sm-3 col-12">
-          <ul class="predictions">
-            <li><mark id="day-li">searching</mark></li>
-            <li><mark id="weather-description">Cloudy</mark></li>
-            <li><mark id="precipitation">Precipitation 30%</mark></li>
-            <li><mark id="wind">Wind 2km/h</mark></li>
-          </ul>
-        </div>
-        <div class="col-sm-6 col-12">
-          <h1>
-            Currently
-            <span class="yayyy"><span id="temperature-degrees">11</span>º</span>
-            in
-            <span id="city-name">Monterrey</span>
-          </h1>
-        </div>
-        <div class="col-sm-3 col-12 text-end">
-          <div class="button-f">
-            <button id="changeToF" type="button" class="btn btn-light btn-light1">
-              Change to f
-            </button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Wireframe</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="square">
+        <div class="row">
+          <div class="col-sm-3 col-12">
+            <ul class="predictions">
+              <li><mark id="day-li">searching</mark></li>
+              <li><mark id="weather-description">Cloudy</mark></li>
+              <li><mark id="precipitation">Precipitation 30%</mark></li>
+              <li><mark id="wind">Wind 2km/h</mark></li>
+            </ul>
           </div>
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="offset-3 col-6">
-          <form id="search-form">
-            <div class="row">
-              <div class="col-9">
-                <input type="search" class="form-control" placeholder="Enter a city" id="city-input" />
-              </div>
-              <div class="col-3">
-                <button type="submit" class="btn btn-light">Search</button>
-              </div>
+          <div class="col-sm-6 col-12">
+            <h1>
+              Currently
+              <span class="yayyy"
+                ><span id="temperature-degrees">11</span>º</span
+              >
+              in
+              <span id="city-name">Monterrey</span>
+            </h1>
+          </div>
+          <div class="col-sm-3 col-12 text-end">
+            <div class="button-f">
+              <button
+                id="changeToF"
+                type="button"
+                class="btn btn-light btn-light1"
+              >
+                Change to f
+              </button>
             </div>
-          </form>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="offset-3 col-6">
+            <form id="search-form">
+              <div class="row">
+                <div class="col-9">
+                  <input
+                    type="search"
+                    class="form-control"
+                    placeholder="Enter a city"
+                    id="city-input"
+                  />
+                </div>
+                <div class="col-3">
+                  <button type="submit" class="btn btn-light">Search</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <p>Mon <b class="number">15</b></p>
+            </div>
+            <div class="col">
+              <p>Tue <b class="number">15</b></p>
+            </div>
+            <div class="col">
+              <p>Wed <b class="number">15</b></p>
+            </div>
+            <div class="col">
+              <p>Thu <b class="number">15</b></p>
+            </div>
+            <div class="col">
+              <p>Fri <b class="number">15</b></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <div class="col">
+              <i class="fas fa-cloud-sun"></i>
+            </div>
+            <div class="col">
+              <i class="fas fa-sun"></i>
+            </div>
+            <div class="col">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <div class="col">
+              <i class="fas fa-cloud-rain"></i>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <p>Mon <b class="number">15</b></p>
-          </div>
-          <div class="col">
-            <p>Tue <b class="number">15</b></p>
-          </div>
-          <div class="col">
-            <p>Wed <b class="number">15</b></p>
-          </div>
-          <div class="col">
-            <p>Thu <b class="number">15</b></p>
-          </div>
-          <div class="col">
-            <p>Fri <b class="number">15</b></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <i class="fas fa-cloud"></i>
-          </div>
-          <div class="col">
-            <i class="fas fa-cloud-sun"></i>
-          </div>
-          <div class="col">
-            <i class="fas fa-sun"></i>
-          </div>
-          <div class="col">
-            <i class="fas fa-cloud"></i>
-          </div>
-          <div class="col">
-            <i class="fas fa-cloud-rain"></i>
-          </div>
-        </div>
-      </div>
+      <p class="coded">This website was coded by Sofia Hinojosa 👩‍💻</p>
+      <button id="current-button">ps hai</button>
     </div>
-    <p class="coded">This website was coded by Sofia Hinojosa 👩‍💻</p>
-    <button id="current-button">ps hai</button>
-  </div>
-  <script>import "./styles.css";
-
-    // date and time
-
-    let now = new Date();
-    let day = now.getDay();
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
-
-    let daysOfTheWeek = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ];
-    day = daysOfTheWeek[now.getDay()];
-
-    let days = document.querySelector("#day-li");
-    days.innerHTML = `${day} ${hours}:${minutes}`;
-
-    // search engine
-
-    function city(event) {
-      event.preventDefault();
-      let cityName = document.querySelector("#city-name");
-      let cityInput = document.querySelector("#city-input");
-      cityName.innerHTML = cityInput.value;
-      nameIdk();
-    }
-
-    let form = document.querySelector("#search-form");
-    form.addEventListener("submit", city);
-
-    // change c to f and api
-
-    // let whatCity = document.querySelector("#city-name").innerHTML; // TODO City is not being reassigned when it changes
-    let change = 0;
-    let apiKey = "4b314f77d77d39ad00e3f1ae01186f3d";
-    let units = "metric";
-    let tempCity;
-    let url;
-
-    function changeTheSystem() {
-      if (change === 0) {
-        units = "imperial";
-        change = 1;
-      } else {
-        units = "metric";
-        change = 0;
-      }
-      nameIdk();
-    }
-    let changeSystem = document.querySelector("#changeToF");
-    changeSystem.addEventListener("click", changeTheSystem);
-
-    // ------- weather
-
-    /* 
-    let current = document.querySelector("#current-button");
-    current.addEventListener("click", showDescription);
-    axios.get(url).then(showDescription);
-    
-    function showDescription(response) {
-      let test = response;
-      console.log(test);
-      let description = document.querySelector("#weather-description");
-      let precipitation = document.querySelector("#precipitation");
-      let wind = document.querySelector("#wind");
-    } */
-
-    // ------- api
-
-    function nameIdk() {
-      let whatCity = document.querySelector("#city-name").innerHTML;
-      tempCity = whatCity;
-      url = `https://api.openweathermap.org/data/2.5/weather?q=${tempCity}&units=${units}&appid=${apiKey}`;
-      console.log(whatCity.innerHTML);
-      console.log(url);
-
-      axios.get(url).then(showTemperature);
-    }
-
-    function showTemperature(response) {
-      let temperature = Math.round(response.data.main.temp);
-      console.log(temperature);
-      let degrees = document.querySelector("#temperature-degrees");
-      degrees.innerHTML = temperature;
-
-      let precipitation = document.querySelector("#precipitation");
-      precipitation.innerHTML = `Precipitation: ${response.data.clouds.all}%`;
-
-      let wind = document.querySelector("#wind");
-      wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
-
-      let weatherDescription = document.querySelector("#weather-description");
-      weatherDescription.innerHTML = response.data.weather[0].description;
-    }
-</script>
-</body>
-
+    <script src="./index.js"></script>
+  </body>
 </html>
