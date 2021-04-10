@@ -49,10 +49,13 @@ i:hover {
   border: 1px solid lightgray;
   border-radius: 20px;
   padding: 10px;
+  max-width: 800px;
+  margin: 10px auto;
 }
 
 .coded {
   color: gray;
+  text-align: center;
 }
 
 .btn-light1 {
