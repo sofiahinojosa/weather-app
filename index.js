@@ -46,6 +46,8 @@ function changeTheSystem() {
   } else {
     units = "metric";
     change = 0;
+    let km = document.querySelector("#km");
+    km.innerHTML = "m"
   }
   nameIdk();
 }
