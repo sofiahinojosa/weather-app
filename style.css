@@ -64,6 +64,11 @@ i:hover {
   margin-bottom: 5px;
 }
 
+#main-img {
+  text-align: center;
+  margin: 5px;
+}
+
 @media only screen and (max-width: 600px) {
   .button-f {
     text-align: center;
