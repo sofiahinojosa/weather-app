@@ -78,6 +78,13 @@ function showTemperature(response) {
   
   let weatherDescription = document.querySelector("#weather-description");
   weatherDescription.innerHTML = response.data.weather[0].description;
+
+  let icon = document.querySelector("#main-icon")
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
 }
 nameIdk();
 
