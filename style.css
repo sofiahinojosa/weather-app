@@ -64,9 +64,13 @@ i:hover {
   margin-bottom: 5px;
 }
 
-#main-icon {
+.icon-div {
   text-align: center;
-  margin: 5px;
+}
+
+#main-icon {
+  width: 20%;
+  height: auto;
 }
 
 @media only screen and (max-width: 600px) {
