@@ -46,8 +46,8 @@ function changeTheSystem() {
   } else {
     units = "metric";
     change = 0;
-    let km = document.querySelector("#km");
-    km.innerHTML = "m"
+    //let km = document.querySelector("#km");
+    //km.innerHTML = "m"
   }
   nameIdk();
 }
@@ -77,6 +77,9 @@ function showTemperature(response) {
   
   let weatherDescription = document.querySelector("#weather-description");
   weatherDescription.innerHTML = response.data.weather[0].description;
+
+  let km = document.querySelector("#km");
+  km.innerHTML = "m"
   
   let icon = document.querySelector("#main-icon")
   icon.setAttribute(
