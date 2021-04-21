@@ -95,9 +95,40 @@ nameIdk();
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
+  let dayz = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  dayz.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="weather-forecast-date">${dayz}</div>
+        <img
+          src="http://openweathermap.org/img/wn/50d@2x.png"
+          alt=""
+          width="42"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> 18° </span>
+          <span class="weather-forecast-temperature-min"> 12° </span>
+        </div>
+      </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
+
+/* function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
   let forecastHTML = `<div class="row">`
   let days = ["Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (days) (
+  days.forEach(function (days) {
     forecastHTML = forecastHTML + `
     <div class="weather-forecast">
         <div class="row">
@@ -110,6 +141,6 @@ function displayForecast() {
           </div>
           </div>
         </div>
-      </div>`
-  ))
-}
+      </div>`;
+  )
+} */
