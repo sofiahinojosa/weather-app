@@ -95,15 +95,15 @@ nameIdk();
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
-  let dayz = ["Thu", "Fri", "Sat", "Sun"];
+  let dayz = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
 
   let forecastHTML = `<div class="row">`;
-  dayz.forEach(function (day) {
+  dayz.forEach(function (date) {
     forecastHTML =
       forecastHTML +
       `
       <div class="col-2">
-        <div class="weather-forecast-date">${dayz}</div>
+        <div class="weather-forecast-date">${date}</div>
         <img
           src="http://openweathermap.org/img/wn/50d@2x.png"
           alt=""
@@ -121,26 +121,4 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
   console.log(forecastHTML);
 }
-
-
-/* function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-
-  let forecastHTML = `<div class="row">`
-  let days = ["Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (days) {
-    forecastHTML = forecastHTML + `
-    <div class="weather-forecast">
-        <div class="row">
-          <div class="col-2">
-           <p class="weather-forecast-date">Mon</p>
-          <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="" width="42" />
-          <div class="weather-fore.cast-temperatures">
-            <span class="weather-forecast-temperature-max">18º</span>
-            <span class="weather-forecast-temperature-min">12º</span>
-          </div>
-          </div>
-        </div>
-      </div>`;
-  )
-} */
+displayForecast();
