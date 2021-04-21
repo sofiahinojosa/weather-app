@@ -64,6 +64,13 @@ function nameIdk() {
   axios.get(url).then(showTemperature);
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "4b314f77d77d39ad00e3f1ae01186f3d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl)
+}
+
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let degrees = document.querySelector("#temperature-degrees");
@@ -78,15 +85,14 @@ function showTemperature(response) {
   let weatherDescription = document.querySelector("#weather-description");
   weatherDescription.innerHTML = response.data.weather[0].description;
 
-  //let km = document.querySelector("#km");
-  //km.innerHTML = "m"
-  
   let icon = document.querySelector("#main-icon")
   icon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
     console.log(response.data.weather[0].icon);
+
+    getForecast(response.data.coord);
 }
 nameIdk();
 
